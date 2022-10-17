@@ -11,24 +11,24 @@ pipeline
     steps {
         echo 'Hello Build'
     }
+    steps{
+        echo 'build complete'
+    }
+    }
     stage('testing')
     {
     
     steps{
         echo 'testing'
     }
+    }
     stage('Deploy'){
         steps{
             echo 'Deploying'
         }
+        }
 
     }
 
-
-}
-
-
-}
-}
 
 }
