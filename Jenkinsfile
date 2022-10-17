@@ -1,14 +1,37 @@
 pipeline
 {
-    agent { label 'RajeshPC'}
+    agent {
+        label 'RajeshPC'
+    }
+    
     stages
     {
     stage('Build')
     {
-    steps
+    steps {
+        echo 'Hello Build'
+    }
+    steps{
+        echo 'build complete'
+    }
+    stage('testing')
     {
-    echo 'Hello World'
+    
+    steps{
+        echo 'testing'
+    }
+    stage('Deploy'){
+        steps{
+            echo 'Deploying'
+        }
+
+    }
+
+
+}
+
+
 }
 }
-}
+
 }
