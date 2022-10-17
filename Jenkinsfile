@@ -6,22 +6,22 @@ pipeline
     
     stages
     {
-    stage('Build')
+    stage('Checkout')
     {
     steps {
         checkout([$class: 'GitSCM', branches: [[name: 'develop']], extensions: [], userRemoteConfigs: [[credentialsId: '9def0e99-8348-4a43-ac4c-71150229ced3', url: 'https://github.com/rajesh-cts/CucumberFlipkart.git']]])
     }
     }
-    stage('testing')
+    stage('Build')
     {
     
     steps{
-        echo 'testing'
+        bat 'mvn clean install -DskipTests'
     }
     }
-    stage('Deploy'){
+    stage('Test'){
         steps{
-            echo 'Deploying'
+            bat 'mvn test'
         }
         }
 
