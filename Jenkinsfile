@@ -1,6 +1,6 @@
 pipeline
 {
-    agent {'RajeshPC'}
+    agent {RajeshPC}
     stages
     {
     stage('Build')
